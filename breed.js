@@ -4,6 +4,8 @@ async function getAllBreeds() {
   attachOptions(conv);
 }
 
+let dog = "";
+
 function attachOptions(data) {
   let breeds = Object.keys(data.message);
 
@@ -12,7 +14,7 @@ function attachOptions(data) {
 
   for (let i = 0; i < breeds.length; i++) {
     let option = document.createElement("option");
-
+    option.classList.add("options");
     option.textContent = breeds[i];
 
     select.appendChild(option);
@@ -20,3 +22,22 @@ function attachOptions(data) {
 }
 
 getAllBreeds();
+
+const dogImg = document.querySelector(".dog-image");
+
+function getDog() {
+  fetch(`https://dog.ceo/api/breed/${dog}/images`)
+    .then((data) => data.json())
+    .then((response) => {
+      if (response.status === "success") {
+        const randomDog =
+          response.message[Math.floor(Math.random() * response.message.length)];
+        dogImg.src = randomDog;
+      }
+    });
+}
+
+function dogSelected(event) {
+  dog = event.target.value;
+  getDog(dog);
+}

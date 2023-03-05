@@ -11,23 +11,27 @@
 
 <body>
 
-    <h1>DoggoSelect</h1>
+    <div class="container">
 
-    <section class="select-breed">
-        <label for="breed">Select a Breed</label>
-        <select name="breed" id="breed" class="breeds">
-            <option value="">Please choose a Breed</option>
-        </select>
+        <h1>DoggoSelect</h1>
 
-    </section>
+        <section class="select-breed">
+            <label for="breed">Select a Breed</label>
+            <select name="breed" id="breed" class="breeds" onchange="dogSelected(event)">
+                <option value="">Please choose a Breed</option>
+            </select>
 
-    <section class="breed-image">
-        <img src="pet.jpg" alt="pet">
-    </section>
+        </section>
 
-    <section class="see-more">
-        <button class="btnMore">Click to see more !</button>
-    </section>
+        <section class="breed-image">
+            <img src="pet.jpg" alt="pet" class="dog-image">
+        </section>
+
+        <section class="see-more">
+            <button class="btnMore" onclick="getDog()">Click to see more !</button>
+        </section>
+
+    </div>
 
 
     <script src="breed.js"></script>

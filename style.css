@@ -15,18 +15,26 @@ label {
 
 .breed-image {
   margin-top: 50px;
-  height: 600px;
-  width: 400px;
+  height: 500px;
+  width: 500px;
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
 }
 
-.see-more {
-  margin-top: -200px;
+.dog-image {
+  height: 100%;
+  width: 100%;
 }
 
 .btnMore {
   border: none;
   background-color: blanchedalmond;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnMore:hover {
+  color: coral;
 }
